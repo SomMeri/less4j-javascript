@@ -13,7 +13,7 @@ import com.github.sommeri.less4j.Less4jException;
 import com.github.sommeri.less4j.LessCompiler;
 import com.github.sommeri.less4j.LessCompiler.CompilationResult;
 import com.github.sommeri.less4j.LessCompiler.Configuration;
-import com.github.sommeri.less4j.core.ThreadUnsafeLessCompiler;
+import com.github.sommeri.less4j.core.DefaultLessCompiler;
 
 public class EmbeddedJsTest {
 
@@ -66,11 +66,10 @@ public class EmbeddedJsTest {
   }
 
   private CompilationResult compile(String less) throws Less4jException {
-    Configuration configuration = new Configuration();
-    Less4jJavascript.configure(configuration);
+    Configuration configuration = Less4jJavascript.configure(new Configuration());
     configuration.setLinkSourceMap(false);
 
-    LessCompiler compiler = new ThreadUnsafeLessCompiler();
+    LessCompiler compiler = new DefaultLessCompiler();
     CompilationResult result = compiler.compile(new File(less), configuration);
     return result;
   }
