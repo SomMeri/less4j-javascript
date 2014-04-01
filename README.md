@@ -18,7 +18,7 @@ Example less:
 compiles into:
 ```
 .logaritmic-thing {
-  margin: 4.60517019;
+  margin: 4.61;
   content: "less symbol is &lt; and more symbol is &gt;";
 }
 ```
@@ -40,8 +40,44 @@ Less4jJavascript.configure(configuration);
 LessCompiler compiler = new DefaultLessCompiler();
 CompilationResult result = compiler.compile(new File(less), configuration);
 ````
-## Fair Warning
-LessHat should be compatible. 
+## Compatibility
+Less4j JavaScript is supposed to be as close to less.js JavaScript support as reasonable. Most important differences are:
+* environment,
+* less scope accessibility.
+
+**Environment**: Less.js runs either on node.js or inside a browser while less4j JavaScript runs in Rhino. Global variables and functions available only in node.js or browser are not available in Rhino. Following will not work:
+```
+title: `typeof process.title`; // accessing node.js global variable
+``` 
+
+**Scope**: Less.js allows access to local scope using `this.variablename` trick. Less4j JavaScript does not support the same.
+
+Following will NOT work:
+```
+.scope {
+    @foo: 42;
+    var: `parseInt(this.foo.toJS())`;
+}
+
+```
+
+Use interpolation instead:
+```
+.scope {
+    @foo: 42;
+    var: `parseInt(@{foo})`;
+}
+
+```
+
+compiles into:
+```
+.scope {
+  var: 42;
+}
+```
+
+In any case, it is supposed to compile [LessHat](https://github.com/csshat/lesshat) the same way as less.js. 
 
 ## Embedded JavaScript
 

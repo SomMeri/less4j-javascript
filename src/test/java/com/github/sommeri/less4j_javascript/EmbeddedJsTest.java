@@ -26,6 +26,9 @@ public class EmbeddedJsTest {
   private static final String lessHat = "src/test/resources/lesshat-test.less";
   private static final String cssLessHat = "src/test/resources/lesshat-test.css";
 
+  private static final String readme = "src/test/resources/readme.less";
+  private static final String cssReadme = "src/test/resources/readme.css";
+
   private static final String quick = "src/test/resources/quick-test.less";
   private static final String cssQuick = "src/test/resources/quick-test.css";
   private static final String quick1 = "src/test/resources/quick-test-1.less";
@@ -51,6 +54,12 @@ public class EmbeddedJsTest {
   public void testLesshat() throws Less4jException {
     CompilationResult result = compile(lessHat);
     assertEquals(canonize(expectedCss(cssLessHat)), canonize(result.getCss()));
+  }
+  
+  @Test
+  public void testReadme() throws Less4jException {
+    CompilationResult result = compile(readme);
+    assertEquals(canonize(expectedCss(cssReadme)), canonize(result.getCss()));
   }
 
   @Test
