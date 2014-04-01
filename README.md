@@ -40,8 +40,9 @@ Less4jJavascript.configure(configuration);
 LessCompiler compiler = new DefaultLessCompiler();
 CompilationResult result = compiler.compile(new File(less), configuration);
 ````
+
 ## Compatibility
-Less4j JavaScript is supposed to be as close enough to less.js to compile [LessHat](https://github.com/csshat/lesshat) the same way. However, it does not have to be behave exactly the same way in all circumstances. Most important differences are:
+Less4j JavaScript is supposed to be as close enough to less.js to compile [LessHat](https://github.com/csshat/lesshat) the same way. However, it does not have to behave exactly the same way in all circumstances. Most important differences are:
 * environment,
 * less scope accessibility.
 
@@ -76,6 +77,6 @@ compiles into:
 In any case, it is supposed to compile [LessHat](https://github.com/csshat/lesshat) the same way as less.js. 
 
 ## Embedded JavaScript
+TODO
 
-### Differences Against Less.js
 
