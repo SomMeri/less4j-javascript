@@ -1,7 +1,7 @@
 Less4j JavaScript
 =================
 
-Less4j-javascript adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded/escaped javascript is javascript code placed inside less file and allows otherwise impossible calculations and logic. Embedded javascript is closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by tilde `~` e.g. `` ~`JavaScript` ``. 
+Less4j-javascript adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded/escaped javascript is js code placed inside less file and allows otherwise impossible calculations and logic. Embedded javascript is closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by tilde `~` e.g. `` ~`JavaScript` ``. 
 
 Example less:
 ```
