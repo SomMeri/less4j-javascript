@@ -1,0 +1,7 @@
+.logaritmic-thing {
+  margin: 4.61;
+  content: "less symbol is &lt; and more symbol is &gt;";
+}
+.scope {
+  var: 42;
+}
