@@ -9,7 +9,7 @@ Example less:
 @content: "less symbol is < and more symbol is >";
 .logaritmic-thing {
   // escaped JavaScript - calculate logarithm
-  margin: ~`Math.log(@{number})`; 
+  margin: ~`Math.round(Math.log(@{number})*100)/100`; 
   // embedded JavaScript - escape < and > characters
   content: `@{content}.replace(/</g, '&lt;').replace(/>/g, '&gt;')`; 
 }
