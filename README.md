@@ -1,14 +1,24 @@
 less4j-javascript
 =================
 
-This plugin adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded JavaScript is JavaScript snippet closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by ~`` ~`JavaScript` ``. 
+This plugin adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded JavaScript is JavaScript snippet closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by tilde `~` e.g. `` ~`JavaScript` ``. 
 
 Example less:
 ```
+@number: 100;
+@content: "less symbol is < and more symbol is >";
+.logaritmic-thing {
+  margin: ~`Math.log(@{number})`; // escaped
+  content: `@{content}.replace(/</g, '&lt;').replace(/>/g, '&gt;')`; // embedded
+}
 ```
 
 compiles into:
 ```
+.logaritmic-thing {
+  margin: 4.60517019;
+  content: "less symbol is &lt; and more symbol is &gt;";
+}
 ```
 
 ## Usage
