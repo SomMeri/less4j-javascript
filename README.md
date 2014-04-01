@@ -1,4 +1,4 @@
-less4j-javascript
+Less4j JavaScript
 =================
 
 This plugin adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded JavaScript is JavaScript snippet closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by tilde `~` e.g. `` ~`JavaScript` ``. 
@@ -8,8 +8,10 @@ Example less:
 @number: 100;
 @content: "less symbol is < and more symbol is >";
 .logaritmic-thing {
-  margin: ~`Math.log(@{number})`; // escaped
-  content: `@{content}.replace(/</g, '&lt;').replace(/>/g, '&gt;')`; // embedded
+  // escaped JavaScript - calculate logarithm
+  margin: ~`Math.log(@{number})`; 
+  // embedded JavaScript - escape < and > characters
+  content: `@{content}.replace(/</g, '&lt;').replace(/>/g, '&gt;')`; 
 }
 ```
 
@@ -39,6 +41,7 @@ LessCompiler compiler = new DefaultLessCompiler();
 CompilationResult result = compiler.compile(new File(less), configuration);
 ````
 ## Fair Warning
+LessHat should be compatible. 
 
 ## Embedded JavaScript
 
