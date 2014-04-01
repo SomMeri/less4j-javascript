@@ -41,7 +41,7 @@ LessCompiler compiler = new DefaultLessCompiler();
 CompilationResult result = compiler.compile(new File(less), configuration);
 ````
 ## Compatibility
-Less4j JavaScript is supposed to be as close to less.js JavaScript support as reasonable. Most important differences are:
+Less4j JavaScript is supposed to be as close enough to less.js to compile [LessHat](https://github.com/csshat/lesshat) the same way. However, it does not have to be behave exactly the same way in all circumstances. Most important differences are:
 * environment,
 * less scope accessibility.
 
@@ -50,15 +50,12 @@ Less4j JavaScript is supposed to be as close to less.js JavaScript support as re
 title: `typeof process.title`; // accessing node.js global variable
 ``` 
 
-**Scope**: Less.js allows access to local scope using `this.variablename` trick. Less4j JavaScript does not support the same.
-
-Following will NOT work:
+**Scope**: Less.js allows access to local scope using `this.variablename` trick. Less4j JavaScript does not support the same. Following will NOT work:
 ```
 .scope {
     @foo: 42;
     var: `parseInt(this.foo.toJS())`;
 }
-
 ```
 
 Use interpolation instead:
@@ -67,7 +64,6 @@ Use interpolation instead:
     @foo: 42;
     var: `parseInt(@{foo})`;
 }
-
 ```
 
 compiles into:
