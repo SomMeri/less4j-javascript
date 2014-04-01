@@ -67,9 +67,7 @@ public class EmbeddedJsTest {
 
   private CompilationResult compile(String less) throws Less4jException {
     Configuration configuration = new Configuration();
-    configuration.addCustomFunction(new EmbeddedJavascript());
-    configuration.addCustomFunction(new EscapedJavascript());
-    configuration.setEmbeddedScriptGenerator(new JavascriptGenerator());
+    Less4jJavascript.configure(configuration);
     configuration.setLinkSourceMap(false);
 
     LessCompiler compiler = new ThreadUnsafeLessCompiler();
