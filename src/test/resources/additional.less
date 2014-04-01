@@ -1,0 +1,17 @@
+.strings {
+  strings-list-embedded: `['a', 'b', "c"]`;
+  strings-list-escaped: ~`['a', 'b', "c"]`;
+  string-embedded: `'aaa'` `"bbb"`;
+  string-escaped: ~`'aaa'` ~`"bbb"`;
+}
+//arguments handling
+.mixin(...) {
+	normal: @arguments;
+	embedded-js: `"@{arguments}"`;
+}
+div-two-space-separated-arguments {
+ .mixin(1 1 1, 2 2 2);
+}
+div-one-space-separated-argument {
+ .mixin(1 1);
+}

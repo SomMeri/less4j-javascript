@@ -1,0 +1,4 @@
+div-one-space-separated-argument {
+  normal: 1 1;
+  embedded-js: "[1, 1]";
+}

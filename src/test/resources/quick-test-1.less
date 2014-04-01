@@ -1,0 +1,13 @@
+//@import "lesshat.less";
+//
+//div-columns {
+// .columns(100 3);
+//}
+
+.mixin(...) {
+	normal: @arguments;
+	embedded-js: `"@{arguments}"`;
+}
+div-one-space-separated-argument {
+ .mixin(1 1);
+}

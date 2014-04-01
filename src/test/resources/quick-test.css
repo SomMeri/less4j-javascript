@@ -1,0 +1,6 @@
+div-transition {
+  -webkit-transition: -webkit-box-shadow 0.2s linear, color .4s .2s ease;
+  -moz-transition: -moz-box-shadow 0.2s linear, color .4s .2s ease;
+  -o-transition: box-shadow 0.2s linear, color .4s .2s ease;
+  transition: box-shadow 0.2s linear, color .4s .2s ease;
+}
