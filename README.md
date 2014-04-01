@@ -1,7 +1,7 @@
 less4j-javascript
 =================
 
-This plugin adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded JavaScript is JavaScript snippet closed inside `` `<JavaScript>` `` and escaped JavaScript is JavaScript code closed inside `` ~`<JavaScript>` ``. 
+This plugin adds embedded/escaped JavaScript support to [less4j](https://github.com/SomMeri/less4j#readme). Embedded JavaScript is JavaScript snippet closed inside ticks `` `JavaScript` `` and escaped JavaScript is the same preceded by ~`` ~`JavaScript` ``. 
 
 Example less:
 ```
