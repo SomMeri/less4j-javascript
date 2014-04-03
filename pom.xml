@@ -3,7 +3,7 @@
 
 	<groupId>com.github.sommeri</groupId>
 	<artifactId>less4j-javascript</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>less4j-javascript</name>
