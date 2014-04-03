@@ -26,7 +26,11 @@ compiles into:
 ## Usage
 Add maven dependency into pom.xml:
 ````
-pom.xml todo
+<dependency>
+    <groupId>com.github.sommeri</groupId>
+    <artifactId>less4j-javascript</artifactId>
+    <version>0.0.1</version>
+</dependency>
 ````
 
 The `configure` method of `Less4jJavascript` configures less4j to use embedded JavaScript:
